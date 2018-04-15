@@ -1,6 +1,6 @@
 const express = require('express');
 app = express();
-const PORT = 30000;
+const PORT = 3000;
 
 const route = require('./routes/index');
 
