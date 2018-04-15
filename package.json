@@ -18,7 +18,11 @@
   },
   "homepage": "https://github.com/joingi/devEnv-synoptic#readme",
   "dependencies": {
-    "express": "^4.16.3"
+    "express": "^4.16.3",
+    "mocha": "5.1.0",
+    "mongodb": "3.0.6",
+    "nodemon": "1.17.3",
+    "mongoose": "5.0.14"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.6",
