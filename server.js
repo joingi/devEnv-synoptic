@@ -1,5 +1,6 @@
 var express = require('express');
 var path = require('path');
+const ejsLint = require('ejs-lint');
 var bodyParser = require('body-parser')
 var ejs = require('ejs');
 app = express();
@@ -7,7 +8,7 @@ app.use(bodyParser.json());
 session = require('express-session')
 const UserController  = require('./controllers/users_controller.js')
 const mongoose = require('mongoose')
-var PORT = 3000;
+var PORT = 6006;
 var routes = require('./routes/index');
 app.set('view engine', 'ejs');
 
