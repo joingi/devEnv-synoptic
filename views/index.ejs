@@ -13,25 +13,10 @@
 	<!-- endbuild -->
 </head>
 <body>
-		<nav class="navbar navbar-expand-lg navbar-light bg-light justify-content-center">
-					<ul class="nav ">
-						<li class="nav-item">
-						  <a class="nav-link active" href="index.html">Bikes</a>
-						</li>
-						<li class="nav-item">
-						  <a class="nav-link" href="#">About us</a>
-						</li>
-						<li class="nav-item">
-						  <a class="nav-link" href="#">Contact</a>
-						</li>
-						<li>
-							<button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
-						</li>
-            <li>
-              <button onclick="document.getElementById('id02').style.display='block'" style="width:auto;">Sign up</button>
-            </li>
-					  </ul>
-				</nav>
+
+    <% include ./partials/head.ejs %>
+
+
 
 
 
@@ -90,76 +75,25 @@
   </form>
 </div>
 
-			  <div class="jumbotron jumbotron-fluid jumbo1">
-					<div class="container">
-					  <h1 class="display-4 jumbo-hedline">Rent a Bike</h1>
-					  <p class="lead jumbo-paragraf">Our City Bike are designed for exploring the city and the bikes are perfect for enjoying an everyday ride.</p>
-					</div>
+		  <div class="jumbotron jumbotron-fluid jumbo1">
+				<div class="container">
+				  <h1 class="display-4 jumbo-hedline">Rent a Bike</h1>
+				  <p class="lead jumbo-paragraf">Our City Bike are designed for exploring the city and the bikes are perfect for enjoying an everyday ride.</p>
 				</div>
-			  <div class="container">
-			  <div class="justify-content-center">
-
-
-			  </div>
-			<div class="card-columns">
-					<div class="card" style="width: 18rem;">
-						<img class="card-img-top" src="images/bmc-teammachine-alr01-105-2016-road-bike-red-EV233467-3000-1.jpg" alt="Card image cap">
-						<div class="card-body">
-							<h5 class="card-title">​Alchemy Eros</h5>
-							<p class="card-text">Titanium is a great material for a bike frame: It's beautiful, tough, long-lasting, and has an amazing feel. The Alchemy Eros is a ti bike that's built in the company’s facilities near Denver, Colorado, and offered in stock (that is, five stock sizes and 15 stock colors) or custom configurations.</p>
-							<a href="checkout.html" class="btn btn-primary">Rent me</a>
-						</div>
-					</div>
-					<div class="card" style="width: 18rem;">
-							<img class="card-img-top" src="images/cannondale-synapse-carbon-ultegra-3-disc-2016-road-bike-black-EV239405-9400-1.jpg" alt="Card image cap">
-							<div class="card-body">
-								<h5 class="card-title">Basso Astra Disc</h5>
-								<p class="card-text">The Astra fits in the middle of Basso’s line, but the monocoque, full carbon fiber frame (i.e., no extra metal reinforcements) is still made in Italy like its more expensive siblings.</p>
-								<a href="#" class="btn btn-primary">Rent me</a>
-							</div>
-						</div>
-						<div class="card" style="width: 18rem;">
-								<img class="card-img-top" src="images/download (3).jpeg" alt="Card image cap">
-								<div class="card-body">
-									<h5 class="card-title">BMC Roadmachine 03 105</h5>
-									<p class="card-text">It might be the best-value model in BMC’s Roadmachine line: The 03 105 is built for the same purpose as the $100 Roadmachine 01 Dura Ace Di2—fun, fast, and far riding, on pavement and off.</p>
-									<a href="#" class="btn btn-primary">Rent me</a>
-								</div>
-							</div>
-							<div class="card" style="width: 18rem;">
-									<img class="card-img-top" src="images/download12121.jpeg" alt="Card image cap">
-									<div class="card-body">
-										<h5 class="card-title">Cannondale SuperSix Evo Disc</h5>
-										<p class="card-text">This model is the least expensive one in Cannondale's line that has a carbon frame and disc brakes.</p>
-										<a href="#" class="btn btn-primary">Rent me</a>
-									</div>
-								</div>
-								<div class="card" style="width: 18rem;">
-										<img class="card-img-top" src="images/images (2).jpeg" alt="Card image cap">
-										<div class="card-body">
-											<h5 class="card-title">​Canyon Ultimate WMN CF SLX 9.0</h5>
-											<p class="card-text">The outline of a road bike is in the midst of a major revision, with disc brakes, thru axles, wide tires, electronic shifting and all sorts of other new features upsetting the classic paradigm. But there are still plenty of traditional race bikes, like this Canyon Women’s Ultimate.</p>
-											<a href="#" class="btn btn-primary">Rent me</a>
-										</div>
-									</div>
-									<div class="card" style="width: 18rem;">
-											<img class="card-img-top" src="images/images (3).jpeg" alt="Card image cap">
-											<div class="card-body">
-												<h5 class="card-title">Colnago C-RS Ultegra</h5>
-												<p class="card-text">The C-RS is the entry-level carbon fiber frame in Colnago’s race series. Though it’s not a C60 (nothing else is), it shares geometry with Colnago’s top-of-the-line bike.</p>
-												<a href="#" class="btn btn-primary">Rent me</a>
-											</div>
-										</div>
-
 			</div>
+		 <div class="container">
+
+			 <% include ./partials/bikes.ejs %>
+
+
 		</div>
 
 
 	<!--build:js js/combined.js -->
-	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-	<script src="js/main.js"></script>
+	<script src="js/main.js"></script> -->
 	<!-- endbuild -->
 </body>
 </html>

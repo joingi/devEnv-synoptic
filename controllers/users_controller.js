@@ -1,10 +1,10 @@
 const User = require('../models/user.js')
 
 module.exports = {
-  greeting(req, res){
-    res.send(res);
-    res.render('index', { title: 'Express' });
-  },
+  // greeting(req, res){
+  //   res.send(res);
+  //   res.render('index', { title: 'Express' });
+  // },
 
   create(req, res, next){
     //console.log(req.body);
@@ -19,7 +19,8 @@ module.exports = {
         console.log('err', err);
         return
       }
-
+        res.redirect('/secret')
+        return
     })
 
 },
