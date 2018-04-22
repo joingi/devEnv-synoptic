@@ -45,11 +45,20 @@ login(req, res, next){
     else{
       res.redirect('/secret')
 
-      console.log("hæjj",user)
+      // console.log("hæjj",user)
       // return next(user);
-      return
+    return
     }
   })
+},
+getUser(req, res){
+  var test = []
+  User.find({}, function(err, users){
+    test.push(users)
+    console.log(users)
+      res.render('secret', {User:users});
 
-  }
+  })
+}
+
 }

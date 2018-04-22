@@ -4,6 +4,8 @@ var router = express.Router();
 var UserController = require('../controllers/users_controller.js')
 var OrderController = require('../controllers/orders_controller.js')
 var RatingController = require('../controllers/rating_controller.js')
+var BikesController = require('../controllers/bikes_controller.js')
+var RatingController = require('../controllers/bikes_controller.js')
 /* GET home page. */
 router.get('/', function(req, res, next) {
 
@@ -30,15 +32,19 @@ router.get('/', function(req, res, next) {
 });
 
 
+router.get('/analytics', BikesController.analytics);
+
+
+// router.get("/partials/bikes.ejs",BikesController.getAllBikes);
 router.post('/signup', UserController.create);
 
 router.post('/login', UserController.login);
+// router.get('/secret', UserController.getUser, BikesController.getAllBikes);
+router.get('/secret', BikesController.getAllBikes);
+// router.get('/secret',UserController.getUser);
+router.get('/secret/:id',BikesController.getBikes);
 
-router.get('/secret', function(req, res, next) {
-  //console.log("okey", next )
-  res.render('secret');
-
-});
+router.get('/secret/rate/:id', BikesController.getBikesRate);
 
 router.get('/checkout', function(req, res, next) {
   //console.log("okey", next )
@@ -46,8 +52,10 @@ router.get('/checkout', function(req, res, next) {
 
 });
 router.post('/checkout', OrderController.create);
+router.post('/bike', OrderController.create);
 
-router.post('/rating', RatingController.create);
+router.get('/rate',  OrderController.create);
+router.post('/rate',  OrderController.create2);
 
 router.get('/rating', function(req, res, next) {
   res.render('rating');
