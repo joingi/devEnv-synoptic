@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Bike Rental</title>
+
+	<!--build:css css/combined.css -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="css/styles.css">
+
+	<!-- endbuild -->
+</head>
+<body>
+
+    <% include ./partials/head.ejs %>
+
+
+
+
+		<button onClick = "<%"show()"%> "> asdasdas </button>
+
+	<div class="" id="target">
+
+	</div>
+
+			<div id="result" class="card-columns" style="display:flex; justify-content:center;">
+			    <div class="card" style="width: 18rem; padding:20px; margin:0 10px;">
+
+
+
+						<h1>The most popular bike by order</h1>
+							<div class="">
+
+								<% if(Order) { %>
+							 	<% for (var key in Order) { %>
+									<div class="" id="yourmodal">
+
+									</div>
+						      <img class="card-img-top" src="images/bmc-teammachine-alr01-105-2016-road-bike-red-EV233467-3000-1.jpg" alt="Card image cap">
+						      <div class="card-body">
+										<div class="">
+											<p>Name of bike: <%= Order[key].bikeName[0].bikeName %> </p>
+										</div>
+										<div class="">
+												<p>Number of people rented: <%= JSON.stringify(Order[key].count )%> </p>
+										</div>
+
+									</div>
+
+								<% } %>
+							<% } %>
+						</div>
+			    </div>
+
+
+					<div class="card" style="width: 18rem; padding:20px; margin:0 10px;">
+
+
+
+						<h1>AVG PER MONTH</h1>
+							<div class="">
+
+
+							<div class="month">
+								<h1>Avarage per Month</h1>
+								<h1 id="month"></h1>
+								<h1>Avarage per Week</h1>
+								<h1 id="week"></h1>
+								<h1>Avarage per day</h1>
+								<h1 id="day"></h1>
+								<h1>daily avarage per day</h1>
+								<h1 id="daylie"></h1>
+							</div>
+
+						</div>
+					</div>
+
+			</div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript">
+
+var test1 =   <%- JSON.stringify(Order) %>
+  // var test = []
+  // var sum = 0;
+
+console.log("ASD", test1)
+
+
+   var test = []
+   var sum = 0;
+ for(var i = 0 ; i < test1.length; i++){
+
+     var item = test1[i].test.length
+     test.push(item)
+
+ }
+ for (var i = 0; i < test.length; i++) {
+   sum += test[i]
+
+ }
+var dt = new Date();
+
+
+function daysInMonth (month, year) {
+	console.log(new Date(year, month, 0).getDate())
+    return new Date(year, month, 0).getDate();
+}
+console.log(dt.getHours())
+
+document.getElementById("month").innerHTML =Math.round(daysInMonth(4,2018) / sum);
+document.getElementById("week").innerHTML = Math.round(7 / sum);
+document.getElementById("day").innerHTML = 1 / sum;
+
+// document.getElementById("daylie").innerHTML = 1 / sum * dt.getMonth(4) / 31;
+
+ console.log(JSON.stringify(  sum));
+
+
+</script>
+
+</body>
+</html>

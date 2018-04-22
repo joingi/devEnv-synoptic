@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Bike Rental</title>
+
+        <!--build:css css/combined.css -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="css/styles.css">
+
+        <!-- endbuild -->
+</head>
+<body>
+  <div class="container">
+
+
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light justify-content-center">
+  				<ul class="nav ">
+  					<li class="nav-item">
+  					  <a class="nav-link active" href="index.html">Bikes</a>
+  					</li>
+  					<li class="nav-item">
+  					  <a class="nav-link" href="#">About us</a>
+  					</li>
+            <li class="nav-item">
+              <a class="nav-link" href="/rating">Rate Bike</a>
+            </li>
+  					<li class="nav-item">
+  					  <a class="nav-link" href="#">Contact</a>
+  					</li>
+  					<li>
+  						<a id="logout" href="/logout" style="width:auto;">Logout</a>
+  					</li>
+  				  </ul>
+  			</nav>
+        <div class="card" style="width: 18rem;">
+          <img class="card-img-top"  src="images/bmc-teammachine-alr01-105-2016-road-bike-red-EV233467-3000-1.jpg"  alt="Card image cap">
+          <div class="card- body">
+            <h3><%= Bike.name %></h3>
+            <p class="card-text">Titanium is a great material for a bike frame: It's beautiful, tough, long-lasting, and has an amazing feel. The Alchemy Eros is a ti bike that's built in the company’s facilities near Denver, Colorado, and offered in stock (that is, five stock sizes and 15 stock colors) or custom configurations.</p>
+            <a href="#" class="btn btn-primary" name="test">Rent me</a>
+          </div>
+        </div>
+
+
+
+          <div class="form-container">
+            <h1>ORDER BIKE</h1>
+                <form method="POST" action="/bike">
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">Name</label>
+                      <input type="text" class="form-control" placeholder="name" name="name">
+                      <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                    </div>
+                    <div class="form-check">
+                      <input id="date" type="date" name="time">
+                      From: <input type="text" name="startDate" id="txtFromDate" />
+                      To: <input type="text" name="endDate" id="txtToDate" />
+                      <input type="hidden" name="bike" value="<%=Bike._id%>">
+                      <input type="hidden" name="bikeName" value="<%=Bike.name%>">
+                      <input type="hidden" name="category" value="bike">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Order</button>
+              </form>
+          </div>
+          <!-- <h1>RATE BIKE</h1>
+          <div class="form-container">
+                <form method="POST" action="/bike">
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">Name</label>
+                      <input type="text" class="form-control" placeholder="name" name="name">
+                      <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                    </div>
+                    <div class="form-check">
+                      <input id="date" type="date" name="time">
+                      <button type="submit" class="btn btn-primary">Order</button>
+                    </div>
+              </form>
+          </div> -->
+  </div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<script src="http://code.jquery.com/ui/1.11.0/jquery-ui.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.full.min.js"></script>
+
+
+<script type="text/javascript">
+
+
+  $(document).ready(function(){
+      $("#txtFromDate").datepicker({
+          minDate: 0,
+          maxDate: "+60D",
+          numberOfMonths: 2,
+          onSelect: function(selected) {
+            $("#txtToDate").datepicker("option","minDate", selected)
+          }
+      });
+      $("#txtToDate").datepicker({
+          minDate: 0,
+          maxDate:"+60D",
+          numberOfMonths: 2,
+          onSelect: function(selected) {
+             $("#txtFromDate").datepicker("option","maxDate", selected)
+          }
+  			});
+  	});
+
+
+  </script>
+</body>
+</html>

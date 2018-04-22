@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Bike Rental</title>
+
+        <!--build:css css/combined.css -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="css/styles.css">
+
+        <!-- endbuild -->
+</head>
+<body>
+  <div class="container">
+
+
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light justify-content-center">
+  				<ul class="nav ">
+  					<li class="nav-item">
+  					  <a class="nav-link active" href="index.html">Bikes</a>
+  					</li>
+  					<li class="nav-item">
+  					  <a class="nav-link" href="#">About us</a>
+  					</li>
+            <li class="nav-item">
+              <a class="nav-link" href="/rating">Rate Bike</a>
+            </li>
+  					<li class="nav-item">
+  					  <a class="nav-link" href="#">Contact</a>
+  					</li>
+  					<li>
+  						<a id="logout" href="/logout" style="width:auto;">Logout</a>
+  					</li>
+  				  </ul>
+  			</nav>
+        <div class="card" style="width: 18rem;">
+          <img class="card-img-top"  src="images/bmc-teammachine-alr01-105-2016-road-bike-red-EV233467-3000-1.jpg"  alt="Card image cap">
+          <div class="card- body">
+            <h3><%= Bike.name %></h3>
+            <p class="card-text">Titanium is a great material for a bike frame: It's beautiful, tough, long-lasting, and has an amazing feel. The Alchemy Eros is a ti bike that's built in the company’s facilities near Denver, Colorado, and offered in stock (that is, five stock sizes and 15 stock colors) or custom configurations.</p>
+            <a href="#" class="btn btn-primary" name="test">Rent me</a>
+          </div>
+        </div>
+
+
+          <div class="form-container">
+          <h1>RATE BIKE</h1>
+          <div class="form-container">
+                <form method="POST" action="/rate">
+                    <select name="rate" placeholder="How many stars dose the bike get ?">
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+                    </select>
+                    <input type="hidden" name="bikeName" value="<%= Bike.name %>">
+                    <input type="hidden" name="bikeId" value="<%= Bike._id %>">
+                    <button type="submit" class="btn btn-primary">Rate</button>
+              </form>
+          </div>
+  </div>
+<!--
+  <script type="text/javascript">
+  var myObj= !{JSON.stringify(bikes)};
+  console.log("sdfas", myObj);
+   </script> -->
+</body>
+</html>

@@ -8,11 +8,15 @@ app.use(bodyParser.json());
 session = require('express-session')
 const UserController  = require('./controllers/users_controller.js')
 const mongoose = require('mongoose')
+
 var PORT = 6006;
 var routes = require('./routes/index');
 app.set('view engine', 'ejs');
+global.gFs = require( 'fs' )
 
+global.newId2 = new mongoose.mongo.ObjectId();
 
+console.log("newId2", newId2)
 
 // const passport = require('passport');
 // app.use(passport.initialize());
